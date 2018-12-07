@@ -1,0 +1,6 @@
+da63caaad9e1fbf8fe18f4cbbb7f598f91c632dc
+0719
+echo "var greeterCompiled=`solc --optimize --combined-json abi,bin,interface HelloNCHU.sol`" > HelloNCHU.js
+geth --mine --minerthreads=1 --datadir .ethereum-private --networkid 123456789 --nodiscover --maxpeers 0 console 2>> .ethereum-private.log
+
+var greeterContract = web3.eth.contract(JSON.parse(greeterCompiled.contracts["HelloNCHU.sol:greeter"].abi));

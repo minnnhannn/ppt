@@ -1,0 +1,24 @@
+echo "var tokenCompiled=`solc --optimize --combined-json abi,bin,interface contracts/Token.sol`" > token.js
+
+echo "var greeterCompiled=`solc --optimize --combined-json abi,bin,interface contracts/HelloNCHU.sol`" > HelloNCHU.js
+
+df8de061f9be7e694fadebb406f2b98e4cfa7326
+720
+
+9733bdc7979f2c9ecd69de816bf1dc2f716b02df
+0720
+
+echo "var greeterCompiled=`solc --optimize --combined-json abi,bin,interface HelloWorld.sol`" > HelloWorld.js
+
+geth --mine --minerthreads=1 --datadir .ethereum-private --networkid 123456789 --nodiscover --maxpeers 0 console 2>> .ethereum-private.log
+
+
+personal.unlockAccount(eth.accounts[1])
+
+Unlock account 0x9733bdc7979f2c9ecd69de816bf1dc2f716b02df
+
+
+
+HelloWorld = contract.new({ from: eth.accounts[0], data: bin, gas: 1000000 })
+
+HelloWorld = contract.new({ from: eth.accounts[1], data: bin, gas: 1000000 })

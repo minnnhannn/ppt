@@ -1,0 +1,12 @@
+Unlock account 0x035c3bbe276593002906783dfd93235abcb903cd
+
+
+
+var greeterContract = web3.eth.contract(JSON.parse(greeterCompiled.contracts["HelloNCHU.sol:greeter"].abi));
+var greeter = greeterContract.new(_greeting, {from: eth.accounts[0], data:"0x" + greeterCompiled.contracts["HelloNCHU.sol:greeter"].bin, gas: 1000000},function(e, contract){
+if(!e) {
+if(!contract.address) {
+console.log("Contract transaction send: TransactionHash: " +
+contract.transactionHash + " waiting to be mined...");
+} else {
+console.log("Contract mined! Address: " + contract.address);}}})
